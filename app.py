@@ -122,4 +122,3 @@ if st.button("🚀 Predict My Wellness"):
 # ℹ️ Footer
 # ------------------------------
 st.markdown("---")
-st.caption("Built with ❤️ using Streamlit, scikit-learn and matplotlib")
