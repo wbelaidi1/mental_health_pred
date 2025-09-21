@@ -41,18 +41,48 @@ A machine learning-powered web application that predicts mental wellness scores 
 
 ### Docker Deployment
 
-1. **Build the Docker image**
-   ```bash
-   docker build -t mental-wellness-app .
-   ```
+**Prerequisites:**
+- Docker installed on your system
+- Docker Compose (optional, for easier deployment)
 
-2. **Run the container**
-   ```bash
-   docker run -p 8501:8501 mental-wellness-app
-   ```
+**Option 1: Using Docker Compose (Recommended)**
+```bash
+# Build and run the application
+docker-compose up --build
 
-3. **Access the app**
-   Open `http://localhost:8501` in your browser
+# Run in background
+docker-compose up -d --build
+```
+
+**Option 2: Using Docker Commands**
+```bash
+# Build the image
+docker build -t mental-wellness-app .
+
+# Run the container
+docker run -p 8501:8501 mental-wellness-app
+```
+
+**Access the app:**
+Open `http://localhost:8501` in your browser
+
+**Container Features:**
+- ✅ Security: Non-root user, read-only data
+- ✅ Health checks: Automatic monitoring
+- ✅ Production ready: Optimized for deployment
+- ✅ Easy scaling: Docker Compose support
+
+**Troubleshooting:**
+```bash
+# View logs
+docker-compose logs -f
+
+# Check container status
+docker ps
+
+# Stop the app
+docker-compose down
+```
 
 ## 📊 Model Details
 
@@ -113,6 +143,7 @@ mental_health_pred/
 ├── eda.ipynb                       # Exploratory data analysis
 ├── requirements.txt                # Python dependencies
 ├── Dockerfile                      # Docker configuration
+├── docker-compose.yml              # Docker Compose configuration
 ├── README.md                       # This file
 └── tests/                          # Test suite
     ├── test_data.py               # Data validation tests
@@ -168,6 +199,7 @@ streamlit
 matplotlib
 scikit-learn
 joblib
+pytest
 ```
 
 ## 🤝 Contributing
